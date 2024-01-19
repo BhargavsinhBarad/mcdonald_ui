@@ -4,21 +4,16 @@ import 'package:get/get.dart';
 import 'package:mcdonald_ui/Moduls/Screens/flagScreen.dart';
 import 'package:mcdonald_ui/Moduls/Screens/loadingscreen.dart';
 
-class welcome extends StatefulWidget {
+class welcome extends StatelessWidget {
   const welcome({super.key});
 
-  @override
-  State<welcome> createState() => _welcomeState();
-}
-
-class _welcomeState extends State<welcome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
         child: Column(
           children: [
-            SizedBox(
+            const SizedBox(
               height: 100,
             ),
             Container(
@@ -26,39 +21,39 @@ class _welcomeState extends State<welcome> {
               width: 250,
               child: Image.asset("lib/Assets/Image/otherimage/earthj.png"),
             ),
-            SizedBox(
+            const SizedBox(
               height: 100,
             ),
-            Text(
+            const Text(
               "Welcome",
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
-            Center(
+            const Center(
               child: Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: EdgeInsets.all(8.0),
                 child: Text(
                   "Before we enter make sure you have selectedv \n             the correct region and language",
                   style: TextStyle(fontSize: 15, color: Colors.grey),
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Row(
               children: [
-                SizedBox(
+                const SizedBox(
                   width: 35,
                 ),
-                Icon(CupertinoIcons.flag_fill),
-                SizedBox(
+                const Icon(CupertinoIcons.flag_fill),
+                const SizedBox(
                   width: 20,
                 ),
                 GestureDetector(
                   onTap: () {
-                    Get.to(flagscreen());
+                    Get.to(() => const flagscreen());
                   },
-                  child: Text(
+                  child: const Text(
                     "Select Region",
                     style: TextStyle(
                       fontSize: 18,
@@ -68,10 +63,10 @@ class _welcomeState extends State<welcome> {
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
-            Row(
+            const Row(
               children: [
                 SizedBox(
                   width: 35,
@@ -89,12 +84,12 @@ class _welcomeState extends State<welcome> {
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             GestureDetector(
               onTap: () {
-                Get.to(loadingscreen());
+                Get.to(() => const loadingscreen());
               },
               child: Container(
                 height: Get.height * 0.055,
@@ -102,7 +97,7 @@ class _welcomeState extends State<welcome> {
                 decoration: BoxDecoration(
                     color: Colors.green,
                     borderRadius: BorderRadius.circular(10)),
-                child: Center(
+                child: const Center(
                   child: Text(
                     "CONFIRM",
                     style: TextStyle(fontSize: 16, color: Colors.white),

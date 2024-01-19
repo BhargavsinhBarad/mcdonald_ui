@@ -4,26 +4,21 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mcdonald_ui/Moduls/Screens/introscreen.dart';
 
-class loadingscreen extends StatefulWidget {
+class loadingscreen extends StatelessWidget {
   const loadingscreen({super.key});
 
-  @override
-  State<loadingscreen> createState() => _loadingscreenState();
-}
-
-class _loadingscreenState extends State<loadingscreen> {
   @override
   Widget build(BuildContext context) {
     Timer(
       Duration(seconds: 5),
       () {
-        Get.to(intro_page());
+        Get.to(() => intro_page());
       },
     );
     return Scaffold(
       body: Column(
         children: [
-          SizedBox(
+          const SizedBox(
             height: 200,
           ),
           Center(
@@ -36,7 +31,7 @@ class _loadingscreenState extends State<loadingscreen> {
               ),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           Container(

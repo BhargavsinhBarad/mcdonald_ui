@@ -3,14 +3,9 @@ import 'package:get/get.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:mcdonald_ui/Moduls/Screens/homepage.dart';
 
-class intro_page extends StatefulWidget {
+class intro_page extends StatelessWidget {
   const intro_page({super.key});
 
-  @override
-  State<intro_page> createState() => _intro_pageState();
-}
-
-class _intro_pageState extends State<intro_page> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -25,7 +20,7 @@ class _intro_pageState extends State<intro_page> {
                 child: Container(
                   height: double.infinity,
                   width: double.infinity,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                       shape: BoxShape.circle,
                       image: DecorationImage(
                           image: NetworkImage(
@@ -42,7 +37,7 @@ class _intro_pageState extends State<intro_page> {
                 child: Container(
                   height: 250,
                   width: 250,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     image: DecorationImage(
                         image: NetworkImage(
                             "https://i.gifer.com/origin/06/06d3da7e7d8e8a51bfbdd2f34465e4d9.gif"),
@@ -52,11 +47,11 @@ class _intro_pageState extends State<intro_page> {
               ),
             ),
           ],
-          done: Text("done"),
+          done: const Text("done"),
           onDone: () {
-            Get.to(home());
+            Get.to(() => home());
           },
-          next: Text("Next"),
+          next: const Text("Next"),
           showNextButton: true,
         ),
       ),

@@ -1,20 +1,14 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class detailspage extends StatefulWidget {
+class detailspage extends StatelessWidget {
   const detailspage({super.key});
 
-  @override
-  State<detailspage> createState() => _detailspageState();
-}
-
-class _detailspageState extends State<detailspage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        actions: [
+        actions: const [
           Icon(Icons.menu),
         ],
       ),
@@ -34,12 +28,12 @@ class _detailspageState extends State<detailspage> {
             Column(
               children: [
                 SizedBox(
-                  height: 25,
+                  height: Get.height * 0.05,
                 ),
-                Align(
+                const Align(
                   alignment: AlignmentDirectional.centerStart,
                   child: Padding(
-                    padding: const EdgeInsets.only(left: 15),
+                    padding: EdgeInsets.only(left: 15),
                     child: Text(
                       "Get Mexican McAloo Tikki\nRegular Meal at Rs.129",
                       style: TextStyle(
@@ -49,51 +43,49 @@ class _detailspageState extends State<detailspage> {
                     ),
                   ),
                 ),
-                SizedBox(
-                  height: 15,
-                ),
-                Align(
+                SizedBox(height: Get.height * 0.025),
+                const Align(
                   alignment: AlignmentDirectional.centerStart,
                   child: Padding(
-                    padding: const EdgeInsets.only(
+                    padding: EdgeInsets.only(
                       left: 15,
                     ),
                     child: Text("Grab this offer now"),
                   ),
                 ),
                 SizedBox(
-                  height: 30,
+                  height: Get.height * 0.1,
                 ),
-                Align(
+                const Align(
                   alignment: AlignmentDirectional.centerStart,
                   child: Padding(
-                    padding: const EdgeInsets.only(
+                    padding: EdgeInsets.only(
                       left: 15,
                     ),
                     child: Text("Requirements"),
                   ),
                 ),
                 SizedBox(
-                  height: 20,
+                  height: Get.height * 0.02,
                 ),
                 Row(
                   children: [
-                    SizedBox(
+                    const SizedBox(
                       width: 20,
                     ),
-                    Icon(
+                    const Icon(
                       Icons.account_circle_outlined,
                       size: 42,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 15,
                     ),
-                    Text(
+                    const Text(
                       "Login/Register",
                       style: TextStyle(fontSize: 20),
                     ),
-                    SizedBox(
-                      width: 50,
+                    const SizedBox(
+                      width: 140,
                     ),
                     Align(
                       alignment: AlignmentDirectional.bottomEnd,
@@ -102,7 +94,7 @@ class _detailspageState extends State<detailspage> {
                         child: Container(
                           height: 40,
                           width: 40,
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                               shape: BoxShape.circle,
                               image: DecorationImage(
                                 image: AssetImage(
@@ -114,26 +106,26 @@ class _detailspageState extends State<detailspage> {
                   ],
                 ),
                 SizedBox(
-                  width: 30,
+                  width: Get.height * 0.06,
                 ),
                 Row(
                   children: [
-                    SizedBox(
+                    const SizedBox(
                       width: 20,
                     ),
-                    Icon(
+                    const Icon(
                       Icons.refresh,
                       size: 44,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 15,
                     ),
-                    Text(
+                    const Text(
                       "Repeating offer",
                       style: TextStyle(fontSize: 20),
                     ),
-                    SizedBox(
-                      width: 46,
+                    const SizedBox(
+                      width: 135,
                     ),
                     Align(
                       alignment: AlignmentDirectional.bottomEnd,
@@ -142,7 +134,7 @@ class _detailspageState extends State<detailspage> {
                         child: Container(
                           height: 40,
                           width: 40,
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                               shape: BoxShape.circle,
                               image: DecorationImage(
                                 image: AssetImage(
@@ -154,19 +146,34 @@ class _detailspageState extends State<detailspage> {
                   ],
                 ),
                 SizedBox(
-                  height: 30,
+                  height: Get.height * 0.08,
                 ),
-                Container(
-                  height: 50,
-                  width: 180,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: Colors.redAccent,
-                  ),
-                  child: Center(
-                    child: Text(
-                      "REDEEM",
-                      style: TextStyle(fontWeight: FontWeight.bold),
+                Padding(
+                  padding: const EdgeInsets.only(left: 15, right: 15),
+                  child: GestureDetector(
+                    onTap: () {
+                      Get.bottomSheet(Container(
+                        height: Get.height * 0.4,
+                        width: double.infinity,
+                        color: Colors.red,
+                      ));
+                    },
+                    child: Container(
+                      height: 50,
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.red,
+                      ),
+                      child: const Center(
+                        child: Text(
+                          "REDEEM",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ),
                     ),
                   ),
                 ),
